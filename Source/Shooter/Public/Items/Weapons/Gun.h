@@ -45,8 +45,6 @@ public:
 	FTimerHandle TimerHandle_TimeBetweenShot;
 	float LastFireTime;
 
-	UFUNCTION(Exec)
-		void SetInfiniteAmmo(bool bNewInfiniteAmmo);
 
 protected:
 	virtual void BeginPlay() override;
