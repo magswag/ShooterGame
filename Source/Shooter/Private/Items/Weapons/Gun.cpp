@@ -9,7 +9,6 @@
 #include "TimerManager.h"
 
 AGun::AGun() {
-	bInfiniteAmmo = false;
 	GunType = EGunTypes::WT_AR;
 	FireRate = 0.1f;
 	bFullAuto = false;
@@ -17,10 +16,6 @@ AGun::AGun() {
 	AmmoCapacity = 30;
 }
 
-void AGun::SetInfiniteAmmo(bool bNewInfiniteAmmo)
-{
-	bInfiniteAmmo = bNewInfiniteAmmo;
-}
 
 void AGun::BeginPlay()
 {
@@ -35,7 +30,8 @@ void AGun::Use_Implementation()
 		StartFire();
 	}
 	else {
-		Fire();
+			Fire();
+		
 	}
 }
 
@@ -52,9 +48,7 @@ void AGun::Fire()
 		switch (GunType) {
 		case EGunTypes::WT_AR:
 			Shoot();
-			if (!bInfiniteAmmo) {
 				AmmoInGun -= 1;
-			}
 			break;
 		}
 	}
