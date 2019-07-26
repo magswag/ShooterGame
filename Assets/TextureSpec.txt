@@ -1,0 +1,4 @@
+Packed:
+ | R: Height
+ | G: Roughness
+ | B: Metallic
